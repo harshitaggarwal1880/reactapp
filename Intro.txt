@@ -1,0 +1,4 @@
+
+
+All the public resources are present in public folder , means the resources which you want to show to public will be present in public folder..
+
