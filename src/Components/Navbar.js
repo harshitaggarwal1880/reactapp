@@ -1,16 +1,16 @@
 import React from "react";
 
-
+import {Link} from "react-router-dom"
 
 // Navbar Component from bootstrap 
-function Navbar() {
+function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="https://www.google.com/">
+          <Link className="navbar-brand" to="/">
             Navbar
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,18 +25,18 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
+                <Link               // here we use Link with to attribute to link page with react router, Instead of a with href , a with href load our page with new files
                   className="nav-link active"
                   aria-current="page"
-                  href="https://www.google.com/"
+                  to="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="https://www.google.com/">
-                  Link
-                </a>
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -75,17 +75,27 @@ function Navbar() {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+
+            
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-primary" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
+
+
+            {/* here we use javascript in class , so we use curly brackets and backticks to use variable in string  */}
+            <div class={`form-check form-switch text-${props.mode==="light" ? "dark" : "light"}`}>  
+              <input type="checkbox" onClick={props.toggleMode} className="form-check-input" id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlfor="flexSwitchCheckDefault">Enable Dark Mode</label>
+            </div>
+
           </div>
         </div>
       </nav>
@@ -93,4 +103,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;    
