@@ -8,9 +8,9 @@ function Navbar(props) {
     <div>
       <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="">
             Navbar
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,18 +25,18 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link               // here we use Link with to attribute to link page with react router, Instead of a with href , a with href load our page with new files
+                <a               // here we use Link with to attribute to link page with react router, Instead of a with href , a with href load our page with new files
                   className="nav-link active"
                   aria-current="page"
-                  to="/"
+                  href=""
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <a className="nav-link" href="">
                   About
-                </Link>
+                </a>
               </li>
               <li className="nav-item dropdown">
                 <a
